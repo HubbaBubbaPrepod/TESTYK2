@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+        <div id="questionText" class="text-animation">Всем привет!</div>
+        <div class="container hidden">
+        <div class="character hidden">
+            <img src="https://gallerypng.com/wp-content/uploads/2024/03/cat-png-cute-cat-free-hd-download-transparent-png-45943.png" alt="Котик" id="cat">
+        </div>
+        
+        <div id="nameInputContainer" class="hidden">
+            <h1>Привет! Введите ваше имя:</h1>
+            <input type="text" id="nameInput" placeholder="Ваше имя">
+            <button id="startButton">Начать</button>
+        </div>
+
+        <div id="quiz" class="hidden">
+            <h2>???????</h2>
+            <form id="quizForm" action="https://formspree.io/f/xpwzqlrv" method="POST">
+                <input type="hidden" name="name" id="nameInputHidden">
+                
+                <div class="question" id="question1">
+                    <p>1. Какая тема у вас сегодня на паре?</p>
+                    <input type="text" name="question1" required>
+                    <button type="button" onclick="nextQuestion(1)">Далее</button>
+                </div>
+                
+                <div class="question hidden" id="question2">
+                    <p>2. Как зовут преподавателя?</p>
+                    <input type="text" name="question2" required>
+                    <button type="button" onclick="nextQuestion(2)">Далее</button>
+                </div>
+
+                <div class="question hidden" id="question3">
+                    <p>3. Вам нравится ваш преподаватель?</p>
+                    <input type="text" name="question3" required>
+                    <button type="button" onclick="nextQuestion(3)">Далее</button>
+                </div>
+
+                <div class="question hidden" id="question4">
+                    <p>4. Оцените тест от 1 до 5</p>
+                    <label>
+                    <input type="radio" name="question4" value="ОЦЕНКА = 1" required> 1
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="ОЦЕНКА = 2" required> 2
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="ОЦЕНКА = 3" required> 3
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="ОЦЕНКА = 4" required> 4 
+                </label>
+                <label>
+                    <input type="radio" name="question4" value="ОЦЕНКА = 5" required> 5
+                </label>
+                    <button type="button" onclick="nextQuestion(4)">Далее</button>
+                </div>
+
+                <div class="question hidden" id="question5">
+                    <p>5. Напишите тут что вы узнали за сегодня</p>
+                    <input type="text" name="question4" required>
+                    <button type="submit">Отправить ответы</button>
+                </div>
+            </form>            
+        </div>
+
+        <div id="result" class="hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
